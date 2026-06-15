@@ -10,12 +10,10 @@ pre_build:
     commands:
       - echo "Building Docker image..."
       - docker build -t pro1 .
-
   build:
     commands:
       - echo "Running container for testing..."
       - docker run -d --name project1 -p 80:80 pro1
-
   post_build:
     commands:
       - echo "Tagging image for Docker Hub..."
