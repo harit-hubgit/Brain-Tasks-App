@@ -1,19 +1,30 @@
+version: 0.2
+
 env:
   parameter-store:
     DOCKER_REGISTRY_USERNAME: "/myapp/docker-credentials/username"
     DOCKER_REGISTRY_PASSWORD: "/myapp/docker-credentials/password"
     DOCKER_REGISTRY_URL: "/myapp/docker-registry/url"
 
-pre_build:
+phases:
+  pre_build:
     commands:
+      - echo "Building Docker image..."
       - docker build -t pro1 .
-      
+
   build:
     commands:
+      - echo "Running container for testing..."
       - docker run -d --name project1 -p 80:80 pro1
-      
+
   post_build:
     commands:
-      - docker push harit-hubgit/Brain-Tasks-App
+      - echo "Tagging image for Docker Hub..."
+      - docker tag pro1 harit-hubgit/brain-tasks-app:latest
+      - echo "Pushing image to Docker Hub..."
+      - docker push harit-hubgit/brain-tasks-app:latest
 
+artifacts:
+  files:
+    - '**/*'
   base-directory: Brain-Tasks-app
