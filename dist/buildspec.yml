@@ -6,8 +6,7 @@ env:
     DOCKER_REGISTRY_PASSWORD: "/myapp/docker-credentials/password"
     DOCKER_REGISTRY_URL: "/myapp/docker-registry/url"
 
-phases:
-  pre_build:
+pre_build:
     commands:
       - echo "Building Docker image..."
       - docker build -t pro1 .
