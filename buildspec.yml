@@ -14,7 +14,7 @@ env:
 
 phases:
   pre_build:
-  commands:
+    commands:
     - echo "Username: $DOCKER_REGISTRY_USERNAME"
     - echo "Registry URL: $DOCKER_REGISTRY_URL"
     - echo "Password length: ${#DOCKER_REGISTRY_PASSWORD}"
