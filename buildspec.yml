@@ -12,9 +12,9 @@ phases:
   post_build:
     commands:
       - echo "Tagging image for Docker Hub..."
-      - docker tag pro1 harit-hubgit/brain-tasks-app:latest
+      - docker tag pro1 haritdockerhub/brain-tasks-app:latest
       - echo "Pushing image to Docker Hub..."
-      - docker push harit-hubgit/brain-tasks-app:latest
+      - docker push haritdockerhub/brain-tasks-app:latest
 
 artifacts:
   files:
