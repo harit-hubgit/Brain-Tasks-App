@@ -6,7 +6,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: haritdockerhub/brain-tasks-app
+    app: project1
   ports:
     - protocol: TCP
       port: 80
