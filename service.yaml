@@ -1,0 +1,13 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: project1
+spec:
+  type: LoadBalancer
+  selector:
+    app: haritdockerhub/brain-tasks-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
